@@ -1,0 +1,62 @@
+@mixin primary-button(
+  $border_color,
+  $text_color,
+  $width: auto,
+  $background: transparent,
+  $hover_border_color: transparent,
+  $hover_text_color,
+  $hover_background,
+  $shadow_color: 255,
+  $opacity: .15,
+) {
+  display: inline-block;
+  padding: 1.3rem 3rem;
+  border: 2px solid $border_color;
+  border-radius: 3.2rem;
+  color: $text_color;
+  background-color: $background;
+  cursor: pointer;
+
+  box-shadow: 0 10px 10px -8px  rgba($shadow_color, $shadow_color, $shadow_color, $opacity);
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    color: $hover_text_color;
+    border-color: $hover_border_color;
+    background-color: $hover_background
+  }
+}
+
+@mixin icon-button(
+  $background: transparent,
+  $hover_background: transparent,
+  $text_color,
+  $hover_text_color: transparent,
+  $size: 4rem,
+  $font-size: 2rem,
+  $shadow: false
+){
+  display: block;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  font-size: $font-size;
+  cursor: pointer;
+  text-align: center;
+  transition: all 300ms ease-in-out;
+  border-radius: 50%;
+  background-color: $background;
+  color: $text_color;
+  z-index: 3;
+  @if $shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 .6rem 2rem rgba(0, 0, 0, 0.2);
+  }
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    color: $hover_text_color;
+    background-color: $hover_background;
+  }
+
+
+}

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { LoadOnViewDirective } from './directives/load-on-view.directive';
 
 @NgModule({
@@ -8,8 +7,7 @@ import { LoadOnViewDirective } from './directives/load-on-view.directive';
     LoadOnViewDirective,
   ],
   imports: [
-    CommonModule,
-    RouterModule
+    CommonModule    
   ],
   exports: [
     LoadOnViewDirective

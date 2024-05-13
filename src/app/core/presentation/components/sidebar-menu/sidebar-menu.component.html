@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <button class="navbar__toggle_btn" [attr.aria-expanded]="visible" (click)="toggleMenu()">
+        <i class="fa-solid" [ngClass]="{ 'fa-xmark': visible, 'fa-bars': !visible }"></i>        
+    </button>
+
+    <div class="menu"
+         [ngClass]="{'menu--visible': visible, 'menu--hidden': !visible}">
+
+        <div class="menu__header">
+            <h2 class="menu__title">Menú</h2>
+        </div>
+
+        <ul class="menu__list">
+            @for( item of menuItems; track item.id ) {
+                <li class="menu__option">
+                    <a href="#" class="menu__link">                        
+                        <i class="menu__icon" [class]="item.icon"></i>
+                        <span class="menu__overlay">{{ item.name }}</span>                        
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</nav>

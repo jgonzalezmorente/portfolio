@@ -1,0 +1,34 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+.layout {  
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "main"
+    "footer";
+}
+
+.main {  
+  grid-area: main;  
+}
+
+.footer {
+  grid-area: footer;
+  background-color: v.$secondary;
+}
+
+.container {
+  width: v.$layout-width-mobile;
+  margin: v.$top-gap-main-content auto;
+
+  @include m.media-breakpoint-up(xl) {
+    width: v.$layout-width-tablet;
+  }  
+
+  @include m.media-breakpoint-up(xxl) {
+    width: v.$layout-width-desktop;
+  }
+}
