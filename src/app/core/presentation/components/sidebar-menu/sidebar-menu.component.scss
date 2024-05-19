@@ -75,7 +75,7 @@
 
         @include m.media-breakpoint-up(xl) {
             position: relative;
-            transition: all 200ms ease-in-out;
+            transition: all 200ms ease-in-out;            
         }
 
         &:hover {
@@ -103,10 +103,10 @@
         @include m.media-breakpoint-up(xl) {
             display: block;
             position: absolute;
-            top: 0;
+            top: 0;            
             padding: .5rem 1rem;
             font-size: 1.5rem;            
-            visibility: hidden;            
+            visibility: hidden;
             white-space: nowrap;            
             border-radius: .5rem;            
             color: black;            
