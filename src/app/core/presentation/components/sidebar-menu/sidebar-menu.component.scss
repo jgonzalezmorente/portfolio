@@ -1,6 +1,8 @@
 @use './variables' as v;
 @use './mixins' as m;
 
+$breakpoint: sm;
+
 .navbar {
     &__toggle_btn {
         position: fixed;
@@ -12,7 +14,7 @@
         background-color: unset;
         cursor: pointer;
 
-        @include m.media-breakpoint-up(xl) {
+        @include m.media-breakpoint-up($breakpoint) {
             display: none
         }
     }
@@ -23,28 +25,24 @@
     top: 0;
     bottom: 0;
     right: 0;
-    width: v.$sidebar-width-mobile;    
+    width: v.$sidebar-width-mobile;
     backdrop-filter: blur(1rem);
     background-color: v.$interactive-background;
     transition: all 300ms ease-in-out;
 
-    @include m.media-breakpoint-up(xl) {
-        width: v.$sidebar-width-default;        
-        top: v.$top-gap-main-content;        
-        right: calc( (100% - v.$layout-width-tablet) / 2 - v.$sidebar-width-default - 2rem);
+    @include m.media-breakpoint-up($breakpoint) {        
+        top: 1.2rem;
+        right: calc(50% - v.$sidebar-width-desktop / 2);
+        width: v.$sidebar-width-desktop;
         bottom: unset;
         border-radius: 6rem;
-        box-shadow: 0 0 30px -5px rgba(255 255 255 /.2);
-    }
-
-    @include m.media-breakpoint-up(xxl) {
-        right: calc( (100% - v.$layout-width-desktop) / 2 - v.$sidebar-width-default - 2rem);
+        box-shadow: 0 0 30px -5px rgba(255 255 255 /.2);                
     }
     
     &__header {
         border-bottom: 1px solid v.$divider-color;
         padding: .8rem 1rem;        
-        @include m.media-breakpoint-up(xl) {
+        @include m.media-breakpoint-up($breakpoint) {
             display: none;
         }
     }
@@ -59,28 +57,30 @@
         flex-direction: column;        
         align-items: center;
 
-        @include m.media-breakpoint-up(xl) {
-            margin-bottom: 3rem;            
-            min-height: 32rem;
+        @include m.media-breakpoint-up($breakpoint) {            
+            margin-top: 0;
+            gap: 1.5rem;
+            padding: .5rem 3rem;
+            flex-direction: row;
             justify-content: space-between;
         }
     }
 
     &__option {
-        padding: 1rem 0;        
+        padding: .7rem 0;        
     }
     
     &__link {
         font-size: 1.8rem;
 
-        @include m.media-breakpoint-up(xl) {
+        @include m.media-breakpoint-up($breakpoint) {
             position: relative;
             transition: all 200ms ease-in-out;            
         }
 
         &:hover {
             color: v.$text-highlight;            
-            @include m.media-breakpoint-up(xl) {
+            @include m.media-breakpoint-up($breakpoint) {
                 .menu__overlay {
                     opacity: 1;
                     visibility: visible;
@@ -93,38 +93,30 @@
     &__icon {
         display: none;
         
-        @include m.media-breakpoint-up(xl) {
+        @include m.media-breakpoint-up($breakpoint) {
             display: block;
-            font-size: 2.8rem;    
+            font-size: 2rem;    
         }
     }
 
     &__overlay {
-        @include m.media-breakpoint-up(xl) {
+        @include m.media-breakpoint-up($breakpoint) {
             display: block;
-            position: absolute;
-            top: 0;            
-            padding: .5rem 1rem;
-            font-size: 1.5rem;            
+            position: absolute;            
+            top: 135%;
+            left: -3.1rem;
+            width: 8rem;
+            padding: .5rem 0;
+            font-size: 1.3rem;
+            text-align: center;
             visibility: hidden;
-            white-space: nowrap;            
-            border-radius: .5rem;            
-            color: black;            
+            white-space: nowrap;
+            border-radius: .5rem;
+            color: black;
             opacity: 0;
             transition: opacity 350ms ease-in-out;
             transition-delay: 100ms;
-            background-color: v.$text-highlight;
-
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 100%;
-                margin-top: -0.5rem;
-                border-width: 0.5rem;
-                border-style: solid;
-                border-color: transparent transparent transparent v.$text-highlight;
-            }
+            background-color: v.$text-highlight;            
         }
     }
 
@@ -134,7 +126,7 @@
 
     &--hidden {
         margin-right: -100%;
-        @include m.media-breakpoint-up(xl) {
+        @include m.media-breakpoint-up($breakpoint) {
             margin-right: unset;
         }
     }

@@ -11,7 +11,7 @@
     "footer";
 }
 
-.main {  
+.main {
   grid-area: main;  
 }
 
@@ -22,13 +22,10 @@
 
 .container {
   width: v.$layout-width-mobile;
-  margin: v.$top-gap-main-content auto;
+  margin: 0 auto;  
 
-  @include m.media-breakpoint-up(xl) {
-    width: v.$layout-width-tablet;
+  @include m.media-breakpoint-up(xl) {    
+    width: v.$layout-width-desktop;
   }  
 
-  @include m.media-breakpoint-up(xxl) {
-    width: v.$layout-width-desktop;
-  }
 }

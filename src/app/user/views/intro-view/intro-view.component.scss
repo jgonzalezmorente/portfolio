@@ -1,0 +1,19 @@
+@use './variables' as v;
+
+.intro {
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+
+    &__user {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    &__image {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 10rem;
+    }
+}
