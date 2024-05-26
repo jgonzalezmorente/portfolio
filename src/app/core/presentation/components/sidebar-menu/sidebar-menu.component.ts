@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Output, inject } from '@angular/core';
 import { MenuItem } from '../../../interfaces';
 import { SectionID } from '../../../enums';
 import { ScrollService } from '../../services/scroll.service';
@@ -10,10 +10,13 @@ import { ScrollService } from '../../services/scroll.service';
 })
 export class SidebarMenuComponent {
 
-  public visible: boolean = false;
+  @Output() onVisibleChange = new EventEmitter<boolean>();
 
+  public visible: boolean = false;
   public sections = SectionID;
   public scrollService = inject(ScrollService);
+  private eRef = inject(ElementRef);
+
 
   public menuItems: MenuItem[] = [
     { id: this.sections.Intro, icon: 'fa-solid fa-house fa-fw', name: 'Inicio' },
@@ -24,11 +27,19 @@ export class SidebarMenuComponent {
     { id: this.sections.Contact, icon: 'fa-solid fa-envelope fa-fw', name: 'Contacto' },
   ];
 
-  toggleMenu() {
-    this.visible = !this.visible;
+  @HostListener('document:click', ['$event'])  
+  onDocumentClick(event: MouseEvent): void {
+    if (!this.eRef.nativeElement.contains(event.target)) {
+      this.toggleMenu();
+    }
   }
 
-  scrollTo(event: Event, id: string) {
+  toggleMenu() {
+    this.visible = !this.visible;
+    this.onVisibleChange.emit(this.visible);
+  }
+
+  scrollTo(event: Event, id: string) {    
     event.preventDefault();
     this.scrollService.scrollToElement(id);
     this.toggleMenu();

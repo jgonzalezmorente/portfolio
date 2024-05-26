@@ -1,19 +1,31 @@
 @use './variables' as v;
+@use './mixins' as m;
 
 .intro {
-    padding-top: 10rem;
     display: flex;
     flex-direction: column;
-
+    padding-top: 5rem;
+    @include m.media-breakpoint-up(sm) {
+        padding-top: 10rem;
+    }
     &__user {
         display: flex;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1.7rem;
     }
-
     &__image {
         border-radius: 50%;
         overflow: hidden;
         width: 10rem;
-    }
+        box-shadow: 0 0 10px rgb(255 255 255 / .1);
+    } 
+}
+
+.status {
+    @include m.conic-gradient-button(
+        $border_color_0: v.$light-teal,
+        $border_color_50: v.$dark-teal,
+        $background-color: v.$bg-gray-800, 
+        $color: v.$text-white-opacity-80
+    );
 }

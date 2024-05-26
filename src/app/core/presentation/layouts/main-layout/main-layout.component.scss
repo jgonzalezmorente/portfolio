@@ -1,31 +1,53 @@
 @use './variables' as v;
 @use './mixins' as m;
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0 0 0 /.5);  
+
+  &--hidden {
+    display: none;
+  }
+
+  &--visible {
+    display: block;
+    @include m.media-breakpoint-up(sm) {
+      display: none;
+    }
+  }
+
+}
+
 .layout {  
-  min-height: 100vh;
+  height: 100vh;
   display: grid;
   grid-template-rows: 1fr auto;
   grid-template-columns: 1fr;
   grid-template-areas:
     "main"
     "footer";
+  overflow-y: scroll;  
+  scrollbar-width: thin;
+  scrollbar-color: v.$interactive-background transparent;
 }
 
 .main {
-  grid-area: main;  
+  grid-area: main;
 }
 
 .footer {
-  grid-area: footer;
-  background-color: v.$secondary;
+  grid-area: footer;  
 }
 
 .container {
   width: v.$layout-width-mobile;
   margin: 0 auto;  
 
-  @include m.media-breakpoint-up(xl) {    
+  @include m.media-breakpoint-up(xl) {
     width: v.$layout-width-desktop;
-  }  
-
+  }
 }

@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
 })
 export class MainLayoutComponent {
 
+  public overlay: boolean = false;
+
+  public handleVisibleChange(visible: boolean) {    
+    this.overlay = visible;
+  }
+
 }

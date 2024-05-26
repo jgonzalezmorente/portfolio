@@ -1,3 +1,5 @@
+@use './animations';
+
 @mixin primary-button(
   $border_color,
   $text_color,
@@ -57,6 +59,35 @@
     color: $hover_text_color;
     background-color: $hover_background;
   }
+}
 
-
+@mixin conic-gradient-button(
+  $border_color_0,
+  $border_color_50,
+  $background-color,
+  $color,
+) {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 3rem;
+  padding: 1px;  
+  &__gradient {
+      z-index: 1;
+      position: absolute;        
+      inset: -1000%; 
+      background: conic-gradient(from 90deg at 50% 50%, $border_color_0 0%, $border_color_50 50%, $border_color_0 100%);                
+      animation: spin 2s linear infinite;        
+  }
+  &__content {        
+      z-index: 2; 
+      padding: .5rem 1.5rem;
+      font-size: 1.3rem;        
+      backdrop-filter: blur(32px);
+      background-color: $background-color;
+      border-radius: 3rem;
+      color: $color;
+      cursor: pointer;
+      text-align: center;      
+  }
 }

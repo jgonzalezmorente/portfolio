@@ -1,4 +1,4 @@
-$layout-width-desktop: 120rem;
+$layout-width-desktop: min(120rem, 80%);
 $layout-width-mobile: min(90rem, 90%);
 
 $sidebar-width-desktop: 35rem;

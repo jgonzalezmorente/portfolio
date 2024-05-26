@@ -1,4 +1,7 @@
-<core-sidebar-menu/>
+<div class="overlay"
+     [ngClass]="{'overlay--visible': overlay, 'overlay--hidden': !overlay}"></div>
+
+<core-sidebar-menu (onVisibleChange)="handleVisibleChange($event)" />
 
 <div class="layout">  
   <main class="main">

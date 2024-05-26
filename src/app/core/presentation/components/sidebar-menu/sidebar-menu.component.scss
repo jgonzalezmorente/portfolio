@@ -5,10 +5,10 @@ $breakpoint: sm;
 
 .navbar {
     &__toggle_btn {
+        z-index: 4;
         position: fixed;
         top: 1rem;
-        right: 1rem;
-        z-index: 1;
+        right: 1.5rem;        
         font-size: 2.2rem;        
         border: unset;
         background-color: unset;
@@ -21,12 +21,13 @@ $breakpoint: sm;
 }
 
 .menu {
+    z-index: 3;
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
-    width: v.$sidebar-width-mobile;
-    backdrop-filter: blur(1rem);
+    width: v.$sidebar-width-mobile;    
+    backdrop-filter: blur(16px);
     background-color: v.$interactive-background;
     transition: all 300ms ease-in-out;
 
@@ -36,7 +37,7 @@ $breakpoint: sm;
         width: v.$sidebar-width-desktop;
         bottom: unset;
         border-radius: 6rem;
-        box-shadow: 0 0 30px -5px rgba(255 255 255 /.2);                
+        box-shadow: 0 0 30px -5px rgba(255 255 255 /.1);                
     }
     
     &__header {
@@ -125,7 +126,7 @@ $breakpoint: sm;
     }
 
     &--hidden {
-        margin-right: -100%;
+        margin-right: -100%;        
         @include m.media-breakpoint-up($breakpoint) {
             margin-right: unset;
         }
