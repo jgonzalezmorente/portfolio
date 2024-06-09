@@ -1,0 +1,50 @@
+@use './variables' as v;
+
+@mixin title-shadow-points {
+    position: relative;
+    display: inline-block;
+    font-size: 3rem;
+    z-index: 1;
+  
+    span {
+      color: v.$text-highlight;
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      right: -2.2rem;
+      width: 5rem;
+      height: 3rem;
+      background-image: -webkit-repeating-radial-gradient( center center, v.$text-highlight, v.$text-highlight 1px, transparent 0%, transparent 100% );
+      background-size: .6rem .6rem;
+      opacity: .7;
+      z-index: -1;
+    }
+  }
+
+  @mixin title-shadow-points-small {
+    display: inline-block;
+    //margin-bottom: 2.5rem;
+    position: relative;
+    padding-right: 1.2rem;
+    z-index: 1;
+  
+    span {
+      color: v.$text-highlight;
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      top: 1.5rem;
+      right: 0;
+      width: 3rem;
+      height: 2rem;
+      background-image: -webkit-repeating-radial-gradient( center center, v.$text-highlight, v.$text-highlight 1px, transparent 0%, transparent 100% );
+      background-size: .6rem .6rem;
+      opacity: .7;
+      z-index: -1;
+    }
+  }

@@ -1,0 +1,13 @@
+@use './mixins' as m;
+
+.header {
+  z-index: 1;
+  &__title {
+    @include m.title-shadow-points-small;
+    &--level1 {
+      @include m.title-shadow-points;
+      margin-bottom: 3rem;
+    }
+    white-space: nowrap;
+  }
+}

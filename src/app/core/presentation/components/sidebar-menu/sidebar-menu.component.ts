@@ -16,8 +16,7 @@ export class SidebarMenuComponent {
   public sections = SectionID;
   public scrollService = inject(ScrollService);
   private eRef = inject(ElementRef);
-
-
+  
   public menuItems: MenuItem[] = [
     { id: this.sections.Intro, icon: 'fa-solid fa-house fa-fw', name: 'Inicio' },
     { id: this.sections.About, icon: 'fa-solid fa-user fa-fw', name: 'Acerca de' },
@@ -43,6 +42,7 @@ export class SidebarMenuComponent {
     event.preventDefault();
     this.scrollService.scrollToElement(id);
     this.toggleMenu();
+
   }
     
   

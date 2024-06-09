@@ -1,0 +1,4 @@
+<header class="header" *ngIf="headText">
+    <h1 *ngIf="level === 1" class="header__title header__title--level1">{{ headText }} <span *ngIf="tailText">{{ tailText }}</span></h1>
+    <h2 *ngIf="level === 2" class="header__title">{{ headText }} <span *ngIf="tailText">{{ tailText }}</span></h2>
+</header>

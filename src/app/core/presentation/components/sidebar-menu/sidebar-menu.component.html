@@ -1,6 +1,6 @@
 <nav class="navbar">
     <button class="navbar__toggle_btn" [attr.aria-expanded]="visible" (click)="toggleMenu()">
-        <i class="fa-solid" [ngClass]="{ 'fa-xmark': visible, 'fa-bars': !visible }"></i>        
+        <i class="fa-solid" [ngClass]="{ 'fa-xmark': visible, 'fa-bars': !visible }"></i>
     </button>
 
     <div class="menu"
@@ -13,7 +13,7 @@
         <ul class="menu__list">
             @for( item of menuItems; track item.id ) {
                 <li class="menu__option">
-                    <a href="#" class="menu__link" (click)="scrollTo($event, item.id)">
+                    <a href="#" viewLinkActive="menu__link--active" [targetId]="item.id" class="menu__link" (click)="scrollTo($event, item.id)">
                         <i class="menu__icon" [class]="item.icon"></i>
                         <span class="menu__overlay">{{ item.name }}</span>
                     </a>

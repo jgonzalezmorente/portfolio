@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, inject } from '@angular/core';
-import { ScrollService } from '../../../core/presentation/services/scroll.service';
+import { ScrollService, FirstVisibleObserverService } from '../../../core/presentation/services';
 import { SectionID } from '../../../core/enums';
 
 const COMPONENT_ID = SectionID.Experience.toString();
@@ -12,11 +12,13 @@ const COMPONENT_ID = SectionID.Experience.toString();
 export class ExperienceViewComponent implements AfterViewInit {
   public componentId = COMPONENT_ID;
 
-  @ViewChild(COMPONENT_ID) intro?: ElementRef;
+  @ViewChild(COMPONENT_ID) section?: ElementRef;
   
   private scrollService = inject(ScrollService);
+  private firstVisibleObserverService = inject(FirstVisibleObserverService);
 
   ngAfterViewInit(): void {
-    this.scrollService.registerElement(this.componentId, this.intro?.nativeElement);
+    this.scrollService.registerElement(this.componentId, this.section?.nativeElement);
+    this.firstVisibleObserverService.observe(this.section?.nativeElement);
   }
 }

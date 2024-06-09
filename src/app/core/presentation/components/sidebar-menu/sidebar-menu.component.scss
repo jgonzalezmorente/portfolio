@@ -76,11 +76,11 @@ $breakpoint: sm;
 
         @include m.media-breakpoint-up($breakpoint) {
             position: relative;
-            transition: all 200ms ease-in-out;            
+            transition: all 200ms ease-in-out;
         }
 
         &:hover {
-            color: v.$text-highlight;            
+            color: v.$bg-gray-400;
             @include m.media-breakpoint-up($breakpoint) {
                 .menu__overlay {
                     opacity: 1;
@@ -89,14 +89,17 @@ $breakpoint: sm;
                 }
             }
         }
+        
+        &--active {
+            color: v.$text-highlight;
+        }
     }
 
     &__icon {
-        display: none;
-        
+        display: none;        
         @include m.media-breakpoint-up($breakpoint) {
             display: block;
-            font-size: 2rem;    
+            font-size: 2rem;
         }
     }
 
@@ -113,11 +116,11 @@ $breakpoint: sm;
             visibility: hidden;
             white-space: nowrap;
             border-radius: .5rem;
-            color: black;
+            color: v.$bg-gray-900;
             opacity: 0;
             transition: opacity 350ms ease-in-out;
             transition-delay: 100ms;
-            background-color: v.$text-highlight;            
+            background-color: v.$primary;
         }
     }
 
