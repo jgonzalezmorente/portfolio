@@ -9,6 +9,7 @@ import { ExperienceViewComponent } from './views/experience-view/experience-view
 import { ProjectsViewComponent } from './views/projects-view/projects-view.component';
 import { ResumeViewComponent } from './views/resume-view/resume-view.component';
 import { ContactViewComponent } from './views/contact-view/contact-view.component';
+import { ProfileActionsComponent } from './components/profile-actions/profile-actions.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ContactViewComponent } from './views/contact-view/contact-view.componen
     ProjectsViewComponent,
     ResumeViewComponent,
     ContactViewComponent,
+    ProfileActionsComponent,
   ],
   imports: [
     CommonModule,

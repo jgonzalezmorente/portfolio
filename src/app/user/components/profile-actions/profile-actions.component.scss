@@ -1,0 +1,36 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+.profile_actions {
+    margin-top: 2rem;
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        @include m.media-breakpoint-up(sm) {
+            flex-direction: row;
+        }
+    }
+
+    &__link {
+        width: 100%;
+        @include m.media-breakpoint-up(xs) {            
+            width: auto;
+        }
+        @include m.primary-button(
+            $border_color: v.$divider-color,
+            $text_color: v.$primary,
+            $background: v.$bg-gray-800,
+            $hover_border_color: v.$text-highlight,
+            $hover_text_color: v.$primary,
+            $hover_background: v.$bg-gray-800,
+            $opacity: .2
+        );
+    }
+
+    &__icon {
+        margin-right: 1rem;
+    }
+}
+

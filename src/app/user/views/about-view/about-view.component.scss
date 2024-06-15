@@ -1,3 +1,5 @@
+@use './variables' as v;
+
 .about {
-    margin-top: 4.5rem;
+    margin-top: v.$section-separator;
 }

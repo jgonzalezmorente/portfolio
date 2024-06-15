@@ -2,12 +2,13 @@
 
 .header {
   z-index: 1;
-  &__title {
+  &__title {    
     @include m.title-shadow-points-small;
     &--level1 {
       @include m.title-shadow-points;
       margin-bottom: 3rem;
+      font-size: 3.5rem;
     }
-    white-space: nowrap;
+    white-space: nowrap;    
   }
 }

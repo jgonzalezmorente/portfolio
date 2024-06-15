@@ -1,0 +1,5 @@
+@use './keyframes'; 
+
+.fade-in {
+    animation: fadeIn 350ms ease-in-out;
+  }

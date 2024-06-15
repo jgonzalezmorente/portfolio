@@ -15,7 +15,7 @@
                 <li class="menu__option">
                     <a href="#" viewLinkActive="menu__link--active" [targetId]="item.id" class="menu__link" (click)="scrollTo($event, item.id)">
                         <i class="menu__icon" [class]="item.icon"></i>
-                        <span class="menu__overlay">{{ item.name }}</span>
+                        <span #overlay class="menu__overlay" [ngStyle]="{'left': item.left}">{{ item.name }}</span>
                     </a>
                 </li>
             }

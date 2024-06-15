@@ -85,7 +85,7 @@ $breakpoint: sm;
                 .menu__overlay {
                     opacity: 1;
                     visibility: visible;
-                    right: 120%;
+                    background-color: v.$text-highlight;                    
                 }
             }
         }
@@ -106,11 +106,9 @@ $breakpoint: sm;
     &__overlay {
         @include m.media-breakpoint-up($breakpoint) {
             display: block;
-            position: absolute;            
-            top: 135%;
-            left: -3.1rem;
-            width: 8rem;
-            padding: .5rem 0;
+            position: absolute;
+            top: 2.5rem;            
+            padding: .5rem 1rem;            
             font-size: 1.3rem;
             text-align: center;
             visibility: hidden;

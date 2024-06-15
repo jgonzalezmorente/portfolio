@@ -4,7 +4,7 @@ import { MainLayoutComponent } from './core/presentation/layouts/main-layout/mai
 
 const routes: Routes = [
   {
-    path: ':user',
+    path: 'user/:user',
     component: MainLayoutComponent,
     loadChildren: () => import( './user/user.module' ).then( m => m.UserModule )
   }

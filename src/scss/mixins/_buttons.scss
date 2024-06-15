@@ -1,9 +1,39 @@
-@use './animations';
+@use './keyframes';
+
+@mixin conic-gradient-button(
+  $border_color_0,
+  $border_color_50,
+  $background-color,
+  $color,
+) {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 3rem;
+  padding: 1px;  
+  &__gradient {
+      z-index: 1;
+      position: absolute;
+      inset: -1000%; 
+      background: conic-gradient(from 90deg at 50% 50%, $border_color_0 0%, $border_color_50 50%, $border_color_0 100%);                
+      animation: spin 2s linear infinite;
+  }
+  &__content {        
+      z-index: 2; 
+      padding: .5rem 1.5rem;
+      font-size: 1.3rem;
+      backdrop-filter: blur(32px);
+      background-color: $background-color;
+      border-radius: 3rem;
+      color: $color;
+      cursor: pointer;
+      text-align: center;
+  }
+}
 
 @mixin primary-button(
   $border_color,
-  $text_color,
-  $width: auto,
+  $text_color,  
   $background: transparent,
   $hover_border_color: transparent,
   $hover_text_color,
@@ -12,15 +42,16 @@
   $opacity: .15,
 ) {
   display: inline-block;
-  padding: 1.3rem 3rem;
-  border: 2px solid $border_color;
+  padding: .3rem 2rem;
+  font-size: 1.6rem;
+  border: 1px solid $border_color;
   border-radius: 3.2rem;
   color: $text_color;
   background-color: $background;
   cursor: pointer;
-
-  box-shadow: 0 10px 10px -8px  rgba($shadow_color, $shadow_color, $shadow_color, $opacity);
+  box-shadow: 0 5px 5px -5px rgba($shadow_color, $shadow_color, $shadow_color, $opacity);
   transition: all 300ms ease-in-out;
+  text-align: center;
 
   &:hover {
     color: $hover_text_color;
@@ -61,33 +92,3 @@
   }
 }
 
-@mixin conic-gradient-button(
-  $border_color_0,
-  $border_color_50,
-  $background-color,
-  $color,
-) {
-  position: relative;
-  display: inline-flex;
-  overflow: hidden;
-  border-radius: 3rem;
-  padding: 1px;  
-  &__gradient {
-      z-index: 1;
-      position: absolute;        
-      inset: -1000%; 
-      background: conic-gradient(from 90deg at 50% 50%, $border_color_0 0%, $border_color_50 50%, $border_color_0 100%);                
-      animation: spin 2s linear infinite;        
-  }
-  &__content {        
-      z-index: 2; 
-      padding: .5rem 1.5rem;
-      font-size: 1.3rem;        
-      backdrop-filter: blur(32px);
-      background-color: $background-color;
-      border-radius: 3rem;
-      color: $color;
-      cursor: pointer;
-      text-align: center;      
-  }
-}
