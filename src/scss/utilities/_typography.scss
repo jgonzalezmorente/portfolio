@@ -1,0 +1,8 @@
+@use '../mixins/mediaqueries' as mq;
+
+.font-responsive {
+    font-size: 1.6rem;    
+    @include mq.media-breakpoint-up(sm) {
+        font-size: 1.8rem;        
+    }
+}

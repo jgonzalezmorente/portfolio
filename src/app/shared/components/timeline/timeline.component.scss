@@ -1,0 +1,83 @@
+@use './variables' as v;
+
+.timeline {
+    &__item {
+        position: relative;
+        margin-bottom: 1.5rem;
+        display: flex;
+        
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__header {
+        flex-basis: 30%;
+        text-align: right;
+        padding: 0 2.5rem 0 0;
+    }
+
+    &__year {
+        margin: .3rem 0;
+        line-height: 1.9rem;
+        font-size: 1.4rem;
+    }
+
+    &__company {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 300;
+        color: v.$text-highlight;
+    }
+
+    &__description {
+        flex-basis: 70%;
+        padding: 0 1.5rem 0 2.5rem;
+    }
+
+    &__title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    &__divider {
+        position: absolute;
+        top: 0;
+        left: 30%;
+        bottom: -1.5rem;
+        width: 1px;
+        background-color: v.$bg-gray-500;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            top: .4rem;
+            left: calc(-17px / 2);
+            background-color: v.$text-highlight;
+            border-radius: 50%;
+            border: 1px solid v.$bg-gray-400;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            background-color: v.$primary;
+            top: calc(.4rem + (17px - 9px) / 2);
+            left: calc(-9px / 2);
+            border-radius: 50%;
+            border: 2px solid v.$bg-gray-500;
+
+        }
+
+    }
+
+}

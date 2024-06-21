@@ -1,14 +1,21 @@
 @use './mixins' as m;
 
-.header {
+.header {   
   z-index: 1;
   &__title {    
+    font-size: 2.5rem;
     @include m.title-shadow-points-small;
-    &--level1 {
+    &--level1 {      
       @include m.title-shadow-points;
-      margin-bottom: 3rem;
-      font-size: 3.5rem;
+      margin-bottom: 3rem;      
     }
-    white-space: nowrap;    
+    white-space: nowrap;
+    @include m.media-breakpoint-up(xs) {
+      font-size: 2.8rem;
+    }
+    @include m.media-breakpoint-up(sm) {
+      font-size: 3.2rem;
+    }
+
   }
 }

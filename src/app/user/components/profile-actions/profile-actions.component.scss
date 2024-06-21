@@ -15,7 +15,7 @@
 
     &__link {
         width: 100%;
-        @include m.media-breakpoint-up(xs) {            
+        @include m.media-breakpoint-up(sm) {
             width: auto;
         }
         @include m.primary-button(
