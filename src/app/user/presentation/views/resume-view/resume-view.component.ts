@@ -1,11 +1,11 @@
 import { Component, ElementRef, ViewChild, inject } from '@angular/core';
-import { ScrollService, FirstVisibleObserverService } from '../../../core/presentation/services';
-import { SectionID } from '../../../core/enums';
+import { ScrollService, FirstVisibleObserverService } from '../../../../core/presentation/services';
+import { SectionID } from '../../../../core/enums';
 
 const COMPONENT_ID = SectionID.Resume.toString();
 
 @Component({
-  selector: 'user-resume-view',
+  selector: 'views-resume-view',
   templateUrl: './resume-view.component.html',
   styleUrl: './resume-view.component.scss'
 })

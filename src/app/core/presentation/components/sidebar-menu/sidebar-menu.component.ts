@@ -19,11 +19,10 @@ export class SidebarMenuComponent {
   
   public menuItems: MenuItem[] = [
     { id: this.sections.Intro, icon: 'fa-solid fa-house fa-fw', name: 'Inicio', left: '-1.2rem' },
-    { id: this.sections.About, icon: 'fa-solid fa-user fa-fw', name: 'Acerca de', left: '-2.8rem' },
-    { id: this.sections.Experience, icon: 'fa-solid fa-briefcase fa-fw', name: 'Experiencia', left: '-3.2rem' },
+    { id: this.sections.About, icon: 'fa-solid fa-user fa-fw', name: 'Sobre mi', left: '-2.3rem' },
+    { id: this.sections.Resume, icon: 'fa-solid fa-graduation-cap', name: 'Curriculum', left: '-2.9rem' },    
     { id: this.sections.Projects, icon: 'fa-solid fa-folder-open fa-fw', name: 'Proyectos', left: '-2.8rem' },
-    { id: this.sections.Resume, icon: 'fa-solid fa-file-alt fa-fw', name: 'Curriculum', left: '-2.8rem' },
-    { id: this.sections.Contact, icon: 'fa-solid fa-envelope fa-fw', name: 'Contacto', left: '-2.5rem' },
+    { id: this.sections.Contact, icon: 'fa-solid fa-envelope fa-fw', name: 'Contacto', left: '-2.3rem' },
   ];
 
   @HostListener('document:click', ['$event'])  

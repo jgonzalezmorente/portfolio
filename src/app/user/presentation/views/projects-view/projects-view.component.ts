@@ -1,16 +1,15 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, inject } from '@angular/core';
-import { ScrollService, FirstVisibleObserverService } from '../../../core/presentation/services';
-import { SectionID } from '../../../core/enums';
+import { ScrollService, FirstVisibleObserverService } from '../../../../core/presentation/services';
+import { SectionID } from '../../../../core/enums/section-id.enum';
 
-const COMPONENT_ID = SectionID.Contact.toString();
+const COMPONENT_ID = SectionID.Projects.toString();
 
 @Component({
-  selector: 'user-contact-view',
-  templateUrl: './contact-view.component.html',
-  styleUrl: './contact-view.component.scss'
+  selector: 'views-projects-view',
+  templateUrl: './projects-view.component.html',
+  styleUrl: './projects-view.component.scss'
 })
-export class ContactViewComponent implements AfterViewInit {
-
+export class ProjectsViewComponent implements AfterViewInit {
   public componentId = COMPONENT_ID;
 
   @ViewChild(COMPONENT_ID) section?: ElementRef;
@@ -21,6 +20,5 @@ export class ContactViewComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.scrollService.registerElement(this.componentId, this.section?.nativeElement);
     this.firstVisibleObserverService.observe(this.section?.nativeElement);
-  }  
-
+  }
 }
