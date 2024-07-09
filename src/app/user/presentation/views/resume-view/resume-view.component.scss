@@ -1,5 +1,35 @@
 @use './variables' as v;
+@use './mixins' as m;
 
 .resume {
     margin-top: v.$section-separator;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include m.media-breakpoint-up(md) {
+            flex-direction: row;
+            gap: 3rem;
+        }
+    }
+
+    &__left {
+        flex-basis: 58%;
+    }
+
+    &__right {
+        flex-basis: 42%;
+        margin-top: v.$section-separator;
+        @include m.media-breakpoint-up(md) {
+            margin-top: unset;
+        }
+    }
+
+    &__timeline, &__skill {
+        margin-bottom: v.$section-separator;
+        &:last-of-type {
+            margin-bottom: unset;
+        }
+    }
+
 }

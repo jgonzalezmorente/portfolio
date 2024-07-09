@@ -1,4 +1,21 @@
 <section #resume [id]="componentId" class="resume">
-    <shared-section-title title="Curriculum vitae"/>
-    <components-experience/>
+    <shared-section-title title="Curriculum Vitae"/>
+    <div class="resume__container">
+        <div class="resume__left">
+            <div class="resume__timeline">
+                <shared-timeline title="Formación Académica"/>
+            </div>
+            <div class="resume__timeline">
+                <shared-timeline title="Experiencia Profesional"/>
+            </div>
+        </div>
+        <div class="resume__right">
+            <div class="resume__skill">
+                <user-components-skill title="Habilidades de Código"/>
+            </div>
+            <div class="resume__skill">
+                <user-components-skill title="Habilidades de Diseño"/>
+            </div>
+        </div>
+    </div>
 </section>

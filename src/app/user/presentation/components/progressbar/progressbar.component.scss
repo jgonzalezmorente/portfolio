@@ -1,0 +1,35 @@
+@use './variables' as v;
+
+.progressbar {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: .5rem;
+    }
+
+    &__text {
+        font-size: 1.3rem;
+        line-height: 1.4rem;        
+    }
+    
+    &__percent {
+        font-size: 1.1rem;
+        line-height: 1.4rem;        
+        color: v.$text-highlight;
+    }
+
+    &__bar {
+        height: 1rem;
+        border: .1rem solid v.$dark-teal;
+        border-radius: 1rem;
+        background-color: v.$bg-gray-900;
+        margin-bottom: 2rem;
+    }
+
+    &__inner_bar {
+        height: 100%;
+        background-color: v.$light-teal;
+        border: 2px solid v.$bg-gray-900;        
+        border-radius: 1rem;
+    }
+}

@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../shared/shared.module';
-import { ExperienceComponent } from './experience/experience.component';
 import { ProfileActionsComponent } from './profile-actions/profile-actions.component';
+import { SkillComponent } from './skill/skill.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 @NgModule({
   declarations: [
-    ExperienceComponent,
     ProfileActionsComponent,
+    SkillComponent,
+    ProgressbarComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
   ],
   exports: [
-    ExperienceComponent,
     ProfileActionsComponent,
+    SkillComponent,
   ]
 })
 export class ComponentsModule { }

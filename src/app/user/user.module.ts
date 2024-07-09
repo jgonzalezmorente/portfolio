@@ -6,7 +6,7 @@ import { PortfolioPageComponent } from './presentation/pages/portfolio-page/port
 
 @NgModule({
   declarations: [
-    PortfolioPageComponent
+    PortfolioPageComponent,
   ],
   imports: [
     CommonModule,    

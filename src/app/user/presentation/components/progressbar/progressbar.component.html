@@ -1,0 +1,10 @@
+<div class="progressbar">
+    <div class="progressbar__content">
+        <h4 class="progressbar__text">{{ text }}</h4>
+        <span class="progressbar__percent">{{ percent }}%</span>
+    </div>
+
+    <div class="progressbar__bar">
+        <div class="progressbar__inner_bar" [ngStyle]="{ 'width': percent + '%'}"></div>
+    </div>
+</div>

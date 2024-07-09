@@ -11,7 +11,7 @@ interface IntersectionInfo {
 })
 export class FirstVisibleObserverService {
   private observer!: IntersectionObserver;
-  private intersectionSource = new Subject<IntersectionInfo>();  
+  private intersectionSource = new Subject<IntersectionInfo>();
   private elementsState = new Map<Element, boolean>();
   
   get intersection$() {
